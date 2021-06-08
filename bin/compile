@@ -39,6 +39,8 @@ zip xf wildfly-$WILDFLY_SERVER_VERSION.zip
 
 echo "extraido"
 
+ls -la
+
 mv wildfly-$WILDFLY_SERVER_VERSION .jboss
 
 echo "removido"
