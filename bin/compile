@@ -37,9 +37,8 @@ curl -O http://download.jboss.org/wildfly/${WILDFLY_SERVER_VERSION}/wildfly-${WI
 
 echo "download efetuado"
 
-ls -l
 
-unzip wildfly-$WILDFLY_SERVER_VERSION.zip
+unzip -l wildfly-$WILDFLY_SERVER_VERSION.zip
 
 echo "extraido"
 
