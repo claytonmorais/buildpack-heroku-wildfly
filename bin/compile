@@ -30,13 +30,21 @@ cd $BUILD_DIR
 mkdir -p .jboss
 
 echo -n "==> Instalando o Wildfly ${WILDFLY_SERVER_VERSION}... "
+
 curl -O http://download.jboss.org/wildfly/${WILDFLY_SERVER_VERSION}/wildfly-${WILDFLY_SERVER_VERSION}.zip
+
 echo "downloaded"
+
 zip xf wildfly-$WILDFLY_SERVER_VERSION.zip
+
 echo "extraido"
-mv wildfly-$WILDFLY_SERVER_VERSION $WILDFLY_HOME
+
+mv wildfly-$WILDFLY_SERVER_VERSION .jboss
+
 echo "removido"
+
 rm wildfly-$WILDFLY_SERVER_VERSION.zip
+
 echo "pacote extraido ocm sucesso"
 
 echo -n "==> Deploying ear... "
@@ -44,6 +52,7 @@ cp target/*.ear $WILDFLY_HOME/standalone/deployments/
 echo "done"
 
 echo "==> Configurando o servidor..."
+
 if [ -f $BUILD_DIR/Procfile ]; then
   echo "        - Using existing process types"
 else
